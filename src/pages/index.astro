@@ -3,11 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
 
-const last_posts = posts.slice(0, 3);
+
 ---
 
 <BaseLayout>
@@ -35,7 +32,7 @@ const last_posts = posts.slice(0, 3);
 
     <HorizontalCard
       title="Cloud 9"
-      img=" /cloud9.JPG"
+      img="/src/images/cloud9.jpg"
       desc="Cloud 9 is a pillow store that lets you get your dream pillow without a hassle."
       url="https://cloud-9.fly.dev/"
       
@@ -43,14 +40,14 @@ const last_posts = posts.slice(0, 3);
     <div class="divider my-0"></div>
     <HorizontalCard
     title="Fitness Tracker"
-    img="/fitness.JPG"
+    img="/src/images/fitness.jpg"
     desc="Fitness Tracker allows you to post your workout routines for other users to see."
     url="https://github.com/Yamato-Amaterasu/UNIV_FitnessTrackr_Starter"
   />
     <div class="divider my-0"></div>
     <HorizontalCard
     title="BlackJack"
-    img="/blackjack.JPG"
+    img="/src/images/blackjack.jpg"
     desc="Work-In-Progress game of blackjack"
     url="https://github.com/Yamato-Amaterasu/BlackJack"
     
@@ -59,17 +56,5 @@ const last_posts = posts.slice(0, 3);
 
   
 
-    {
-      last_posts.map((post) => (
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + post.slug}
-          target="_self"
-        />
-        <div class="divider my-0"></div>
-      ))
-    }
 
 </BaseLayout>
