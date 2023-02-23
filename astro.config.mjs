@@ -6,8 +6,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro.build/",
+  site: "https://yamato-amaterasu.github.io/",
   integrations: [mdx(), sitemap(), tailwind()],
-  outDir: "public",
-  publicDir: "static",
+  base: "/Personal-Website",
 });
