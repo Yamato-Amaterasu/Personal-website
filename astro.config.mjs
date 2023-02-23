@@ -8,5 +8,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://yamato-amaterasu.github.io/",
   integrations: [mdx(), sitemap(), tailwind()],
-  // base: "/Personal-Website",
+  base: "/Personal-Website",
 });
